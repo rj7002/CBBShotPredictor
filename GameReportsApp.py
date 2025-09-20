@@ -157,7 +157,7 @@ def safe_literal_eval(val):
             return None
     return val  
 
-def make_get_request(url, , params=None):
+def make_get_request(url, params=None):
     headers = {
         "Authorization": f"Bearer {}",
     }
