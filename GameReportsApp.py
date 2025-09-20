@@ -157,9 +157,9 @@ def safe_literal_eval(val):
             return None
     return val  
 
-def make_get_request(url, params=None):
+def make_get_request(url, token, params=None):
     headers = {
-        "Authorization": f"Bearer {}",
+        "Authorization": f"Bearer {token}",
     }
     try:
         response = requests.get(url, headers=headers, params=params)
@@ -169,7 +169,7 @@ def make_get_request(url, params=None):
         print(f"API error: {e}")
         return None
 
-def fetch_all_player_locations(game_id, ):
+def fetch_all_player_locations(game_id):
     base_url = "https://api.shotquality.com"
     endpoint = "/player-locations"
     all_rows = []
